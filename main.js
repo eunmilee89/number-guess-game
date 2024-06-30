@@ -41,7 +41,7 @@ function play(){
     //return을 사용하면 해당 함수의 실행이 종료되고, 그 함수의 호출자에게 값을 반환한다. 이 때문에 return 뒤에 있는 코드들은 실행되지 않는다.
 
     if(history.includes(userValue)){
-        resultArea.textContent = "이미 입력한 숫자입니다. 다른 숫자를 입력해주세요.";
+        resultArea.textContent = "이미 입력한 숫자입니다.";
         return;
     }
 
@@ -51,11 +51,11 @@ function play(){
     console.log("chance", chances);
 
     if(userValue < computerNum){
-        resultArea.textContent = "up";
+        resultArea.textContent = "up!";
     } else if(userValue > computerNum){
-        resultArea.textContent = "down";
+        resultArea.textContent = "down!";
     } else{
-        resultArea.textContent = "맞췄습니다.";
+        resultArea.textContent = "Correct!";
         gameOver = true;        
     } 
 
@@ -76,8 +76,13 @@ function reset(){
     userInput.value = ""
     //새로운 번호가 생성되고
     pickRandomNum();
+    gameOver = false;
+    playButton.disabled = false;
+    chances = 5;
+    chanceArea.textContent = `남은 기회 :${chances}번`;
+    history = [];
 
-    resultArea.textContent = "결과가 나온다"
+    resultArea.textContent = "숫자를 입력해주세요."
 }
 
 pickRandomNum();
