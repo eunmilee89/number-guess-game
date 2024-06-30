@@ -12,9 +12,20 @@ let computerNum = 0;
 let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
+let resetButton = document.getElementById("reset-button");
+let chances = 5;
+let gameOver = false;
+let chanceArea = document.getElementById("chance-area");
+let history = [];
+
 
 playButton.addEventListener("click", play);
+resetButton.addEventListener("click", reset);
+userInput.addEventListener("focus", function(){userInput.value
+    userInput.value = "";
+})
 //함수도 변수처럼 넘길 수 있음, ()꼭 빼기 
+
 function pickRandomNum(){
     computerNum = Math.floor(Math.random()*100)+1;
     console.log("정답", computerNum);
@@ -22,13 +33,51 @@ function pickRandomNum(){
 
 function play(){
     let userValue = userInput.value;
+
+    if(userValue<1 || userValue>100){
+        resultArea.textContent = "1과 100 사이 숫자를 입력해주세요.";
+        return;
+    }
+    //return을 사용하면 해당 함수의 실행이 종료되고, 그 함수의 호출자에게 값을 반환한다. 이 때문에 return 뒤에 있는 코드들은 실행되지 않는다.
+
+    if(history.includes(userValue)){
+        resultArea.textContent = "이미 입력한 숫자입니다. 다른 숫자를 입력해주세요.";
+        return;
+    }
+
+
+    chances--;
+    chanceArea.textContent = `남은 기회 :${chances}번`;
+    console.log("chance", chances);
+
     if(userValue < computerNum){
-        resultArea.textContent = "up"
+        resultArea.textContent = "up";
     } else if(userValue > computerNum){
-        resultArea.textContent = "down"
+        resultArea.textContent = "down";
     } else{
-        resultArea.textContent = "맞췄습니다."
+        resultArea.textContent = "맞췄습니다.";
+        gameOver = true;        
     } 
+
+    history.push(userValue);
+    console.log(history);
+
+    if(chances < 1){
+        gameOver=true
+    }
+
+    if(gameOver == true){
+        playButton.disabled = true;
+    }
+}
+
+function reset(){
+    //user input 창이 정리되고
+    userInput.value = ""
+    //새로운 번호가 생성되고
+    pickRandomNum();
+
+    resultArea.textContent = "결과가 나온다"
 }
 
 pickRandomNum();
