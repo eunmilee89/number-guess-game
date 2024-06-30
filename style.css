@@ -37,8 +37,8 @@ button{
     background-image: linear-gradient(to bottom, #D5E60E, #9EB408,#A9DF0E);
     border: 0.3vw solid #2B471C;
     color:#2B471C;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 73px;
+    padding-right: 73px;
 }
 
 .reset{
@@ -68,42 +68,26 @@ button{
 }
 
 .chance{
-    font-size: 40px;
+    font-size: 32px;
     color :#FF7979;
     -webkit-text-stroke: 0.1vw #7E0000;
 }
 
 @media screen and (max-width: 48rem){
-    button{
-        margin-top: 24px;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-    
+
+    .text-box{
+        height: 100px;
+        width: 300px;
+        font-size: 5vw;
     }
 
-    .chance{
-        font-size: 5vw;
-        position: relative;
-        top: -420px;
+    h1{
+        font-size: 60px;
     }
 
     .result{
-        font-size: 8vw;
-        position: relative;
-        top: 30px;
+        font-size: 32px;
     }
 
-    .button-area{
-        position: relative;
-        top: -40px;
-    }
-
-    .text-box{
-        width: 300px;
-        height: 70px;
-    }
+   
 }
