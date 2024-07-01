@@ -18,8 +18,10 @@ h1{
 }
 
 .container{
-    width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
 
 button{
     font-size: 2vw;
@@ -73,7 +75,7 @@ button{
     -webkit-text-stroke: 0.1vw #7E0000;
 }
 
-@media screen and (max-width: 48rem){
+@media screen and (max-width: 70rem){
 
     .text-box{
         height: 100px;
@@ -89,5 +91,11 @@ button{
         font-size: 32px;
     }
 
+    .go{
+        padding-left: 56px;
+        padding-right: 56px;
+    }
+    
    
 }
+ 
