@@ -78,17 +78,23 @@ button{
 @media screen and (max-width: 70rem){
 
     .text-box{
-        height: 100px;
+        height: 90px;
         width: 300px;
-        font-size: 5vw;
+        font-size: 10vw;
     }
 
     h1{
+        margin-top: 30px;
+        margin-bottom: 30px;
         font-size: 60px;
     }
 
     .result{
-        font-size: 32px;
+        font-size: 24px;
+    }
+
+    .chance{
+        font-size: 20px;
     }
 
     .go{
@@ -96,6 +102,18 @@ button{
         padding-right: 56px;
     }
     
+    button{
+        font-size: 4vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .text{
+        margin-top: 20px;
+        margin-bottom:20px;
+    }
    
 }
  
