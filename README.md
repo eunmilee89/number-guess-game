@@ -4,6 +4,7 @@
 
 </br>
 ![image](https://github.com/eunmilee89/number-guess-game/assets/173548488/12dce651-b8ae-4e77-a1b2-cb72200b19ff)
+
 모바일 화면
 
 </br>
